@@ -1,6 +1,7 @@
 // Libraries
 import { Button, TextField, Typography } from '@mui/material';
 import { AnimatePresence, motion } from 'framer-motion';
+import LoadingButton from '@mui/lab/LoadingButton';
 import _ from 'lodash';
 
 // Utils
@@ -12,7 +13,7 @@ const childrenVariants = {
 };
 
 const About = () => {
-  const { aboutInfo, form, cancelChanges } = useAboutPageController();
+  const { aboutInfo, form, sending, cancelChanges } = useAboutPageController();
   const { values, handleChange, handleSubmit } = form;
 
   const hasChanges = _.isEqual(values, aboutInfo);
@@ -27,6 +28,9 @@ const About = () => {
     >
       <motion.div variants={childrenVariants}>
         <Typography variant='h3'>What about you?</Typography>
+        <Typography variant='body2' className='text-slate-500'>
+          Talking about your professional profile
+        </Typography>
       </motion.div>
       <motion.div variants={childrenVariants}>
         <TextField
@@ -65,9 +69,14 @@ const About = () => {
             </motion.div>
           )}
         </AnimatePresence>
-        <Button variant='contained' disabled={hasChanges}>
-          Save Changes
-        </Button>
+        <LoadingButton
+          variant='contained'
+          type='submit'
+          loading={sending}
+          disabled={hasChanges}
+        >
+          {!sending ? 'Save Changes' : 'Sending'}
+        </LoadingButton>
       </motion.div>
     </motion.form>
   );
