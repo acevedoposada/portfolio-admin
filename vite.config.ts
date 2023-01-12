@@ -12,7 +12,9 @@ export default defineConfig({
     macrosPlugin(),
     tsconfigPaths(),
     [
-      '@emotion/babel-plugin-jsx-pragmatic',
+      {
+        name: '@emotion/babel-plugin-jsx-pragmatic',
+      },
       {
         export: 'jsx',
         import: '__cssprop',
@@ -20,9 +22,9 @@ export default defineConfig({
       },
     ],
     [
-      '@babel/plugin-transform-react-jsx',
+      { name: '@babel/plugin-transform-react-jsx' },
       { pragma: '__cssprop' },
-      'twin.macro',
+      { name: 'twin.macro' },
     ],
   ],
 });
