@@ -43,9 +43,12 @@ const Resume = () => {
                 className='no-underline'
               >
                 <CardItem
-                  className={clsx({
-                    [`w-60 ${section.color}`]: isActive,
-                  })}
+                  className={clsx(
+                    `border border-solid ${section.borderColor}`,
+                    {
+                      [`w-60 ${section.color} rounded-l-full`]: isActive,
+                    }
+                  )}
                 >
                   <Avatar
                     className={clsx('w-8 h-8 transition-all', {

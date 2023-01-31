@@ -1,4 +1,5 @@
 import { alpha, ThemeOptions } from '@mui/material/styles';
+import tw from 'twin.macro';
 
 // ----------------------------------------------------------------------
 
@@ -7,6 +8,7 @@ export default function Input(theme: ThemeOptions) {
     MuiInputBase: {
       styleOverrides: {
         root: {
+          ...tw`!rounded-2xl`,
           '&.Mui-disabled': {
             '& svg': { color: theme?.palette?.text?.disabled },
           },

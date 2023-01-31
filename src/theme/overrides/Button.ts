@@ -8,8 +8,7 @@ export default function Button(theme: ThemeOptions & any) {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: '1rem',
-          ...tw`h-12`,
+          ...tw`h-12 rounded-2xl`,
           '&:hover': {
             boxShadow: 'none',
           },

@@ -19,6 +19,7 @@
     "@mui/base": "^5.0.0-alpha.112",
     "@mui/lab": "^5.0.0-alpha.115",
     "@mui/material": "^5.11.2",
+    "array-move": "^4.0.0",
     "clsx": "^1.2.1",
     "dayjs": "^1.11.7",
     "firebase": "^9.15.0",
@@ -31,6 +32,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.1",
+    "react-sortable-hoc": "^2.0.0",
+    "reactfire": "^4.2.2",
     "yup": "^0.32.11"
   },
   "devDependencies": {

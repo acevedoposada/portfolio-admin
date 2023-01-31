@@ -1,15 +1,19 @@
+import { SnackbarProvider } from 'notistack';
+
+import { DashboardLayoutDrawerProvider } from 'context/dashboard-layout-drawer.context';
+import { AuthProvider as AuthCtxProvider } from 'context/auth.context';
 import ThemeProvider from 'theme';
 import Router from 'app.routes';
-import { DashboardLayoutDrawerProvider } from 'context/dashboard-layout-drawer.context';
-import { SnackbarProvider } from 'notistack';
 
 function App() {
   return (
     <ThemeProvider>
       <SnackbarProvider maxSnack={3}>
-        <DashboardLayoutDrawerProvider>
-          <Router />
-        </DashboardLayoutDrawerProvider>
+        <AuthCtxProvider>
+          <DashboardLayoutDrawerProvider>
+            <Router />
+          </DashboardLayoutDrawerProvider>
+        </AuthCtxProvider>
       </SnackbarProvider>
     </ThemeProvider>
   );
